@@ -53,7 +53,58 @@
     \end{itemize}
     
     \subsection{Kinematics relations}
+    	The kinematic relations are a set of formulae in mechanics that describe the motion of objects moving with constant acceleration, without considering the forces that cause the motion.
     	
+    	\subsubsection{Velocity-time relation}
+    		Consider the motion of a particle moving with a constant acceleration $\vb{a}$. Let its initial velocity be $\vb{v}_1=\vb{v}_0$ at time $t_1=0$, and its final velocity be $\vb{v}_2=\vb{v}(t)$ at some arbitrary time $t$. Then from equation (\ref{eqn:vel-integ}), we have
+    		\begin{align}
+    			\vb{v}(t)-\vb{v}_0&=\vb{a}\int_{0}^{t}{\dd{t}} \nonumber\\
+    			\implies\vb{v}(t)-\vb{v}_0&=\vb{a}\qty(t-0) \nonumber\\
+    			\implies\Aboxed{\vb{v}(t)&=\vb{v}_0+\vb{a}t} \label{eqn:kine-rel-01}
+    		\end{align}
+    		which is the \emph{velocity-time relation}, or the \emph{first kinematic relation}.
+    		
+    	\subsubsection{Position-time relation}
+    		Consider the motion of a particle moving with a constant acceleration $\vb{a}$. Let its initial position be $\vb{r}_1=\vb{r}_0$ at time $t_1=0$, and its final position be $\vb{r}_2=\vb{r}(t)$ at some arbitrary time $t$. Then from equation (\ref{eqn:disp-integ}), we have
+    		\begin{align}
+    			\vb{r}(t)-\vb{r}_0&=\int_{0}^{t}{\vb{v}\dd{t}} \nonumber\\
+    				&=\int_{0}^{t}{\qty(\vb{v}_0+\vb{a}t)\dd{t}}\qq{[using eqn. (\ref{eqn:kine-rel-01})]} \nonumber\\
+    				&=\vb{v}_0\int_{0}^{t}{\dd{t}}+\vb{a}\int_{0}^{t}{t\dd{t}} \nonumber\\
+    				&=\vb{v}_0\qty(t-0)+\vb{a}\left. \dfrac{t^2}{2} \right|_{0}^{t} \nonumber\\
+    			\implies\Aboxed{\vb{r}(t)&=\vb{r}_0+\vb{v}_0t+\dfrac{1}{2}\vb{a}t^2} \label{eqn:kine-rel-02}
+    		\end{align}
+    		which is the \emph{position-time relation}, or the \emph{second kinematic relation}.
+    		
+    	\subsubsection{Position-velocity relation}
+    		We know that
+    		\begin{align*}
+    			\vb{a}&=\dv{\vb{v}}{t}
+    		\end{align*}
+    		Taking the dot product of the above with an infinitessimal displacement $\dd{\vb{r}}$, we have
+    		\begin{align}
+    			\vb{a}\cdot\dd{\vb{r}}&=\dv{\vb{v}}{t}\cdot\dd{\vb{r}} \nonumber\\
+    			\implies\vb{a}\cdot\dd{\vb{r}}&=\dv{\vb{r}}{t}\cdot\dd{\vb{v}} \nonumber\\
+    			\implies\vb{a}\cdot\dd{\vb{r}}&=\vb{v}\cdot\dd{\vb{v}} \label{eqn:adr-vdv-01}
+    		\end{align}
+    		Now, using the product rule for differentiation, we have
+    		\begin{align*}
+    			\dd{\qty(\vb{v}\cdot\vb{v})}&=\dd{\vb{v}}\cdot\vb{v}+\vb{v}\cdot\dd{\vb{v}} \\
+    			\implies 2\vb{v}\cdot\dd{\vb{v}}&=\dd{\qty(\vb{v}\cdot\vb{v})} \\
+    			\implies\vb{v}\cdot\dd{\vb{v}}&=\dfrac{1}{2}\dd{\qty(\vb{v}\cdot\vb{v})}
+    		\end{align*}
+    		Then equation (\ref{eqn:adr-vdv-01}) becomes
+    		\begin{align}
+    			\vb{a}\cdot\dd{\vb{r}}&=\dfrac{1}{2}\dd{\qty(\vb{v}\cdot\vb{v})} \label{eqn:adr-vdv-02}
+    		\end{align}
+    		Suppose we have a particle moving under constant acceleration $\vb{a}$. If at its initial and final positions $\vb{r}_0$ and $\vb{r}$, it has initial and final velocities $\vb{v}_0$ and $\vb{v}$, then we can integrate equation (eqn:adr-vdv-02) as
+    		\begin{align}
+    			\vb{a}\cdot\int_{\vb{r}_0}^{\vb{r}}{\dd{\vb{r}}}&=\dfrac{1}{2}\int_{\vb{v}_0}^{\vb{v}}{\dd{\qty(\vb{v}\cdot\vb{v})}} \nonumber\\
+    			\implies\vb{a}\cdot\left. \vb{r} \right|_{\vb{r}_0}^{\vb{r}}&=\dfrac{1}{2}\left. \vb{v}\cdot\vb{v} \right|_{\vb{v}_0}^{\vb{v}} \nonumber\\
+    			\implies\vb{a}\cdot\qty(\vb{r}-\vb{r}_0)&=\dfrac{1}{2}\qty(\vb{v}\cdot\vb{v}-\vb{v}_0\cdot\vb{v}_0) \nonumber\\
+    				&=\dfrac{1}{2}\qty(v^2-v_0^2) \nonumber\\
+    			\implies\Aboxed{v^2&=v_0^2+2\vb{a}\cdot\qty(v^2-v_0^2)} \label{eqn:kine-rel-03}
+    		\end{align}
+    		which is the \emph{position-velocity relation}, or the \emph{third kinematic relation}.
     
     \subsection{Newton's laws of motion}
     
