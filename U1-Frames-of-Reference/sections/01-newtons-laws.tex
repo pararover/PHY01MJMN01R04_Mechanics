@@ -15,40 +15,109 @@
     	\item \emph{Motion:} the change in position or orientation of an object with respect to a chosen frame of reference over time.
     	
     	\item \emph{Inertia:} the tendency of a body to resist any change in its motion or configuration.
+    	
+    	\item \emph{Position:} the location of a particle in space with respect to a fixed reference point known as the origin. If $(x,y,z)$ are the coordinates of a particle in Cartesian space, then its position vector is
+    	\begin{align}
+    		\vb{r}&=x\vu{i}+y\vu{j}+z\vu{k} \label{eqn:posn-vec}
+    	\end{align}
+    	
+    	\item \emph{Displacement:} the change in the position of a particle. If a particle is initially at the position $\vb{r}_i=x_i\vu{i}+y_i\vu{j}+z_i\vu{k}$ and then finally moves to the position $\vb{r}_f=x_f\vu{i}+y_f\vu{j}+z_f\vu{k}$, its displacement vector is
+    	\begin{align}
+    		\Delta\vb{r}&=\vb{r}_f-\vb{r}_i=(x_f-x_i)\vu{i}+(y_f-y_i)\vu{j}+(z_f-z_i)\vu{k} \label{eqn:displ-vec}
+    	\end{align}
+    	If the displacement is infinitessimally small, then we can write
+    	\begin{align}
+    		\dd{\vb{r}}&=\vu{i}\dd{x}+\vu{j}\dd{y}+\vu{k}\dd{z} \label{eqn:displ-vec-inf}
+    	\end{align}
+    	
+    	\item \emph{Velocity:} the rate of change of position of a particle. If the position of a particle varies with time, then its instantaneous velocity is the first derivative of its position with respect to time.
+    	\begin{align}
+    		\vb{v}=\dot{\vb{r}}&=\dv{\vb{r}}{t} \label{eqn:vel-vec}
+    	\end{align}
+    	If the positions of a particle at two instants of time are $\vb{r}(t_1)=\vb{r}_1$ and $\vb{r}(t_2)=\vb{r}_2$, then its displacement is obtained by the integral
+    	\begin{align}
+    		\int_{\vb{r}_1}^{\vb{r}_2}{\dd{\vb{r}}}&=\int_{t_1}^{t_2}{\vb{v}\dd{t}} \nonumber\\
+    		\implies\vb{r}_2-\vb{r}_1&=\int_{t_1}^{t_2}{\vb{v}\dd{t}} \label{eqn:disp-integ}
+    	\end{align}
+    	
+    	\item \emph{Acceleration:} the rate of change of velocity of a particle. If the velocity of a particle varies with time, then its instantaneous acceleration is the first derivative of its velocity with respect to time, or the second derivative of its position with respect to time.
+    	\begin{align}
+    		\vb{a}=\dot{\vb{v}}&=\dv{\vb{v}}{t} \label{eqn:acc-vec:v}\\
+    		\qq{or}\vb{a}=\ddot{\vb{r}}&=\dv[2]{\vb{r}}{t} \label{eqn:acc-vec:r}
+    	\end{align}
+    	If the velocities of a particle at two instants of time are $\vb{v}(t_1)=\vb{v}_1$ and $\vb{v}(t_2)=\vb{v}_2$, then the change in its velocity is obtained by the integral
+    	\begin{align}
+    		\int_{\vb{v}_1}^{\vb{v}_2}{\dd{\vb{v}}}&=\int_{t_1}^{t_2}{\vb{a}\dd{t}} \nonumber\\
+    		\implies\vb{v}_2-\vb{v}_1&=\int_{t_1}^{t_2}{\vb{a}\dd{t}} \label{eqn:vel-integ}
+    	\end{align}
     \end{itemize}
     
-    \subsection{Newton's first law of motion}
-    	\begin{tcolorbox}[colframe=black, colback=lightgray, opacityfill=0.2, arc=0mm]
-    		A particle tends to maintain its state of rest or uniform motion unless it is acted upon by an external agency.
-    	\end{tcolorbox}\vspace{-2.5ex}
-    	\begin{itemize}
-    		\item The importance of Newton's first law of motion lies in that it \ul{defines force} as:
-    		
-    		\emph{Force is any external agency that brings about a change in the state of rest or uniform motion of a particle.}
-    	\end{itemize}
-    
-    \subsection{Newton's second law of motion}
-    	\begin{tcolorbox}[colframe=black, colback=lightgray, opacityfill=0.2, arc=0mm]
-    		The rate of change of momentum of a particle is directly proportional to the force exerted on it, and takes place in the direction of the force.
-    		\begin{align*}
-    			\vb{F}&\propto\dv{\vb{p}}{t}
-    		\end{align*}
-    	\end{tcolorbox}\vspace{-2.5ex}
-    	\begin{itemize}
-    	\item The importance of Newton's second law of motion lies in that it \ul{measures force} as:
+    \subsection{Kinematics relations}
     	
-    	\emph{If a force of magnitude $F$ brings about an acceleration $a$ on a particle of mass $m$, then the force is measured to be $F=ma$.}
-    	\end{itemize}
     
-    \subsection{Newton's third law of motion}
-    	\begin{tcolorbox}[colframe=black, colback=lightgray, opacityfill=0.2, arc=0mm]
-    		For every action, there is an equal and opposite reaction, both of which act on different bodies.
-    		\begin{align*}
-    			\vb{F}_{12}&=-\vb{F}_{21}
-    		\end{align*}
-    	\end{tcolorbox}\vspace{-2.5ex}
-    	\begin{itemize}
-    	\item The importance of Newton's second law of motion lies in that it \ul{gives the origin of force} as:
-    	
-    	\emph{If a particle experiences a force of magnitude $F$, it is because it exerts another force of the same magnitude $F$ but in the opposite direction on some other particle.}
-    	\end{itemize}
+    \subsection{Newton's laws of motion}
+    
+	    \subsubsection{Newton's first law of motion}
+	    	\begin{tcolorbox}[colframe=black, colback=lightgray, opacityfill=0.2, arc=0mm]
+	    		A particle tends to maintain its state of rest or uniform motion unless it is acted upon by an external agency.
+	    	\end{tcolorbox}\vspace{-2.5ex}
+	    	\begin{itemize}
+	    		\item The importance of Newton's first law of motion lies in that it \ul{defines force} as:
+	    		
+	    		\emph{Force is any external agency that brings about a change in the state of rest or uniform motion of a particle.}
+	    	\end{itemize}
+	    
+	    \subsubsection{Newton's second law of motion}
+	    	\begin{tcolorbox}[colframe=black, colback=lightgray, opacityfill=0.2, arc=0mm]
+	    		The rate of change of momentum of a particle is directly proportional to the force exerted on it, and takes place in the direction of the force.
+	    		\begin{align*}
+	    			\vb{F}&\propto\dv{\vb{p}}{t}
+	    		\end{align*}
+	    	\end{tcolorbox}%\vspace{-2.5ex}
+	    	
+	    	This implies that we have
+	    	\begin{align*}
+	    		\vb{F}&=k\dv{\vb{p}}{t}
+	    	\end{align*}
+	    	where $k$ is the proportionality constant.
+	    	
+	    	Now, for a particle of mass $m$ and moving with a velocity $\vb{v}$, its momentum is defined as $\vb{p}=m\vb{v}$. Hence, Newton's second law becomes
+	    	\begin{align*}
+	    		\vb{F}&=k\dv{t}\qty(m\vb{v}) \\
+	    			&=km\dv{\vb{v}}{t}\qq{[assuming $m$ to be constant]} \\
+	    		\vb{F}&=km\vb{a}
+	    	\end{align*}
+	    	The constant $k$ is set to $1$ by our choice of the units of force. We define $1$ newton to be that amount of force that brings about an acceleration of $1$ \unit{\metre\per{\second\squared}} on a particle of mass $1$ \unit{\kilo\gram}. Then from the above, we have
+	    	\begin{align*}
+	    		\qty(1\;\unit{\newton})&=k\times\qty(1\;\unit{\kilo\gram})\times\qty(1\;\unit{\metre\per{\second\squared}}) \\
+	    		\implies k&=1
+	    	\end{align*}
+	    	Therefore, for a particle \emph{whose mass remains unchanged}, Newton's second law of motion can be written as
+	    	\begin{align*}
+	    		\Aboxed{\vb{F}&=m\vb{a}}
+	    	\end{align*}
+	    	
+	    	\begin{itemize}
+	    	\item The importance of Newton's second law of motion lies in that it \ul{measures force} as:
+	    	
+	    	\emph{If a force of magnitude $F$ brings about an acceleration $a$ on a particle of mass $m$, then the force is measured to be $F=ma$.}
+	    	\end{itemize}
+	    
+	    \subsubsection{Newton's third law of motion}
+	    	\begin{tcolorbox}[colframe=black, colback=lightgray, opacityfill=0.2, arc=0mm]
+	    		For every action, there is an equal and opposite reaction, both of which act on different bodies.
+	    		\begin{align*}
+	    			\vb{F}_{12}&=-\vb{F}_{21}
+	    		\end{align*}
+	    	\end{tcolorbox}\vspace{-2.5ex}
+	    	\begin{itemize}
+	    	\item The importance of Newton's second law of motion lies in that it \ul{gives the origin of force} as:
+	    	
+	    	\emph{If a particle experiences a force of magnitude $F$, it is because it exerts another force of the same magnitude $F$ but in the opposite direction on some other particle.}
+	    	\end{itemize}
+	    	
+	\subsection{Special cases of Newton's second law of motion}
+		
+		\subsubsection{The first law as a special case}
+		
+		\subsubsection{The third law as a special case}
