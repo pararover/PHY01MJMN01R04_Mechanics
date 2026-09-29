@@ -1,3 +1,50 @@
 \section{Inertial frames of reference}
 
-	Insert section content.
+	A reference frame (e.g. a coordinate system) in which Newton's first law of motion holds good, is known as an \emph{inertial frame of reference}. Hence, in an inertial frame a body continues in its state of rest or
+	of uniform motion as long as no external force acts on it.
+	
+	All frames of reference moving with a constant velocity with respect to an inertial frame are also inertial frames of reference.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.35\textwidth]{figures/fig_inertial-frame-01.png}
+	\end{figure}
+	
+	Consider an inertial frame of reference $S$ and another reference
+	frame $S'$, such that their orientations in space remain fixed
+	and are thus free to have only translatory motion with respect to
+	one another. Suppose further that the origins $O$ and $O'$ at the
+	two systems initially coincident. 
+	
+	As shown in the figure the frame $S'$ has moved into its current position in time $t$ with a constant velocity $\vb{v}$ relative to $S$. Then we have
+	\begin{align*}
+		\bar{OO'}=\vb{R}=\vb{v}t
+	\end{align*}
+	The position vectors $\vb{r}$ and $\vb{r}'$ of a particle $P$, with respect to the two frames of reference are then related as
+	\begin{align*}
+		\vb{r}&=\vb{R}+\vb{r}' \\
+		\implies\vb{r}'&=\vb{r}-\vb{R} \\
+		\implies\vb{r}'&=\vb{r}-\vb{v}t
+	\end{align*}
+	
+	Differentiating the above, we get
+	\begin{align*}
+		\dv{\vb{r}'}{t}&=\dv{\vb{r}}{t}-\vb{v}
+	\end{align*}
+	
+	Differentiating once again, we get
+	\begin{align*}
+		\dv[2]{\vb{r}'}{t}&=\dv[2]{\vb{r}}{t} \\
+		\implies\vb{a}'&=\vb{a}
+	\end{align*}
+	
+	Hence, the acceleration of the particle is the same in the two frames of reference. This indicates that if the particle is at rest or uniform motion in the frame $S$, then it would also appear to be at rest or uniform motion in the other frame $S'$.
+	
+	\emph{Therefore, all frames of reference, moving with a constant velocity with respect to an inertial frame, are also inertial frames of reference.}
+	
+	\textbf{Examples of inertial frames of reference:}
+	\begin{enumerate}
+		\item An object in deep space, away from any gravitational influence, can be considered to be in an inertial frame of reference.
+		
+		\item An object falling freely under the influence of gravity can be considered to be in an inertial frame of reference.
+	\end{enumerate}
