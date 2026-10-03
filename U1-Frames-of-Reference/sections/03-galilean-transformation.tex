@@ -96,6 +96,89 @@
 			
 			The above equation shows us that \emph{length or distance between two points remains invariant to a Galilean transformation}.
 		
+		\setcounter{equation}{0}
 		\subsubsection{Transformation of velocity}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.5\textwidth]{figures/fig_gal-inv_velocity.png}
+			\end{figure}
+			
+			Consider a particle in motion, which is being observed from two inertial frames of reference $S$ and $S'$. Frame $S'$ is moving with a constant speed $v$ along the positive $X$ direction relative to the frame $S$. This implies that the unit vector basis of the two frames always remain correspondingly parallel, and so we have
+			\begin{align}
+				\vu{x}'=\vu{x},\;\vu{y}'=\vu{y},\;\vu{z}'=\vu{z} \label{eqn:gal-inv:unit-vec}
+			\end{align}
+			
+			Also, the velocity of the frame $S'$ with respect to $S$ is
+			\begin{align}
+				\vb{v}&=\vu{x}v \label{eqn:gal-inv:rel-vel}
+			\end{align}
+			From the Galilean transformation for the time coordinate, we have
+			\begin{align*}
+				t'&=t \\
+				\implies\dv{t'}{t}&=1 \\
+				\qq{or,}\dv{t}{t'}&=1
+			\end{align*}
+			
+			Now, the Galilean transformation for the $X$ coordinate is
+			\begin{align*}
+				x'&=x-vt \\
+				\implies\dv{x'}{t'}&=\dv{t'}\qty(x-vt) \\
+					&=\dv{x}{t'}-\dv{t'}\qty(vt) \\
+					&=\dv{x}{t}\dv{t}{t'}-v\dv{t}{t'} \\
+				\implies\dv{x'}{t'}&=\dv{x}{t}-v
+			\end{align*}
+			
+			Likewise, we have for the $Y$ and $Z$ coordinates
+			\begin{align*}
+				y'=y&\qq{and}z'=z \\
+				\implies\dv{y'}{t'}=\dv{y}{t'}&\qq{and}\dv{z'}{t'}=\dv{z}{t'} \\
+				\implies\dv{y'}{t'}=\dv{y}{t}\dv{t}{t'}&\qq{and}\dv{z'}{t'}=\dv{z}{t}\dv{t}{t'} \\
+				\implies\dv{y'}{t'}=\dv{y}{t}&\qq{and}\dv{z'}{t'}=\dv{z}{t}
+			\end{align*}
+			
+			The velocity of the particle, as observed from the frame $S$, is given as
+			\begin{align}
+				\vb{u}&=\vu{x}\dv{x}{t}+\vu{y}\dv{y}{t}+\vu{z}\dv{z}{t} \label{eqn:gal-inv:vel-S}
+			\end{align}
+			
+			And its velocity, as observed from the frame $S'$, is given as
+			\begin{align}
+				\vb{u}'&=\vu{x}'\dv{x'}{t'}+\vu{y}'\dv{y'}{t'}+\vu{z}'\dv{z'}{t'} \nonumber\\
+					&=\vu{x}'\qty(\dv{x}{t}-v)+\vu{y}'\dv{y}{t}+\vu{z}'\dv{z}{t} \nonumber\\
+					&=\vu{x}\qty(\dv{x}{t}-v)+\vu{y}\dv{y}{t}+\vu{z}\dv{z}{t}\qq{[using eqn. (\ref{eqn:gal-inv:unit-vec})]} \nonumber\\
+					&=\qty(\vu{x}\dv{x}{t}+\vu{y}\dv{y}{t}+\vu{z}\dv{z}{t})-\qty(\vu{x}v) \nonumber\\
+				\implies\Aboxed{\vb{u}'&=\vb{u}-\vb{v}}\qq{[using eqns. (\ref{eqn:gal-inv:rel-vel}) and (\ref{eqn:gal-inv:vel-S})]} \label{eqn:gal-inv:vel-S-p}
+			\end{align}
+			
+			Equation (\ref{eqn:gal-inv:vel-S-p}) shows us that the \emph{velocity of a particle is not invariant to a Galilean transformation}. It is the transformation of velocity across the inertial frames.
+			
+			The inverse velocity transformation is
+			\begin{align}
+				\Aboxed{\vb{u}&=\vb{u}'+\vb{v}} \label{eqn:gal-inv:vel-S-p-inv}
+			\end{align}
+			
+			Equations (\ref{eqn:gal-inv:vel-S-p}) and (\ref{eqn:gal-inv:vel-S-p-inv}) are referred to as the Galilean law of addition of velocities.
 		
 		\subsubsection{Transformation of acceleration}
+			The acceleration of a particle measured with respect to the frame $S$ is
+			\begin{align*}
+				\vb{a}&=\dv{\vb{u}}{t}
+			\end{align*}
+			
+			Likewise, the acceleration of the same particle measured with respect to the frame $S'$ is
+			\begin{align*}
+				\vb{a}'&=\dv{\vb{u}'}{t'}=\dv{\vb{u}'}{t}\dv{t}{t'}=\dv{\vb{u}'}{t}
+			\end{align*}
+			
+			Using the Galilean law of addition of velocities above, we get
+			\begin{align*}
+				\vb{a}'&=\dv{t}\qty(\vb{u}-\vb{v}) \\
+					&=\dv{\vb{u}}{t}-\dv{\vb{v}}{t}
+			\end{align*}
+			
+			Because the velocity $\vb{v}$ of the frame $S'$ with respect to $S$ remains constant, we have $\dv{\vb{v}}{t}=0$. Then the above becomes
+			\begin{align*}
+				\vb{a}'&=\dv{\vb{u}}{t} \\
+				\Aboxed{\vb{a}'&=\vb{a}}
+			\end{align*}
+				The above equation shows us that \emph{the acceleration of a particle remains invariant to a Galilean transformation}.
