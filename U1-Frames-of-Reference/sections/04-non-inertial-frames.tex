@@ -1,0 +1,83 @@
+\setcounter{equation}{0}
+\section{Non-inertial frames of reference}
+
+	A reference frame (e.g. a coordinate system) in which Newton's first law of motion does not hold good, is known as a \emph{non-inertial frame of reference}.
+	
+	All frames of reference having an accelerated motion with respect to an inertial frame are non-inertial frames of reference.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\textwidth]{figures/fig_non-inertial-frame.png}
+	\end{figure}
+	
+	In the above figure, $S$ is an inertial frame. Another frame $S'$ is moving with an acceleration $\vb{a}_0$ with respect to frame $S$. Here the frame $S'$ is a non-inertial frame of reference.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.4\textwidth]{figures/fig_non-inertial_rest.png}
+	\end{figure}
+	If a particle of mass $m$ is at rest with respect to the frame $S$, then it would appear to have an acceleration $-\vb{a}_0$ with respect to the frame $S'$.
+	
+	From Newton's second law of motion, with respect to $S'$, it appears as if some pseudo-force
+	\begin{align}
+		\vb{F}_p=-m\vb{a}_0 \label{eqn:non-iner:pseudo}
+	\end{align}
+	is acting on the particle.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.4\textwidth]{figures/fig_non-inertial_accl.png}
+	\end{figure}
+	Suppose now that the particle has an acceleration $\vb{a}$ with respect to the frame $S$. Then the force acting on it in $S$ is
+	\begin{align}
+		\vb{F}&=m\vb{a} \label{eqn:non-iner:force-S}
+	\end{align}
+	
+	The acceleration of the particle with respect to the non-inertial frame $S'$ would be
+	\begin{align*}
+		\vb{a}'&=\vb{a}-\vb{a}_0
+	\end{align*}
+	
+	Then from Newton's second law of motion, the force acting on the particle with respect to $S'$ would be
+	\begin{align}
+		\vb{F}'&=m\vb{a}' \nonumber \\
+			&=m\qty(\vb{a}-\vb{a}_0) \nonumber \\
+			&=m\vb{a}-m\vb{a}_0 \nonumber \\
+		\implies\Aboxed{\vb{F}&=\vb{F}+\vb{F}_p}\qq{[using eqns. (\ref{eqn:non-iner:pseudo}) and (\ref{eqn:non-iner:force-S})]} \label{eqn:non-iner:force-S-p}
+	\end{align}
+	
+	Equations (\ref{eqn:non-iner:pseudo}) and (\ref{eqn:non-iner:force-S-p}) show that, regardless of whether a force is acting on a particle in the inertial frame, a pseudo-force of $\vb{F}_p=-m\vb{a}_0$ always seems to be acting on the particle in the non-inertial frame of reference.
+	
+	Such pseudo-forces, which arise due to the accelerated motion of a non-inertial frame of reference, are known as \emph{fictitious forces}.
+	
+	\subsection{Rotating coordinate systems}
+	
+		\setcounter{equation}{0}
+		\subsubsection{Rate of change of a rotating vector}
+			\setwrappadding
+			\begin{wrapfigure}[16]{r}{0.35\textwidth} % 'r' for right side, width is 35% of text width
+				\centering
+				\includegraphics[width=0.98\linewidth]{figures/fig_rotating-vector-rate}
+			\end{wrapfigure}
+			Consider an arbitrary vector $\vb{B}$ which is precessing at an angular frequency of $\Omega$ about an arbitrary axis lying in the $\vu{n}$ direction as shown in the figure.
+			\resetwrappadding
+			
+			Then the angular velocity vector is $\vb{\Omega}=\Omega\vu{n}$. Let $\alpha$ be the angle between the vectors $\vb{B}$ and $\vb{\Omega}$. At times $t$ and $t+\Delta t$, we have the vectors $\vb{B}(t)$ and $\vb{B}(t+\Delta t)$ respectively. The tip of $\vb{B}$ sweeps out a circular path with radius $B\sin{\alpha}$ and the plane of the circle is perpendicular to $\vu{n}$.
+			
+			During time $\Delta t$ the tip of $\vb{B}$ swings through an angle of $\Omega\Delta t$. Consequently, the tip of $\vb{B}$ moves by an amount $\Delta B$, where
+			\begin{align*}
+				\Delta B\approx\qty(B\sin{\alpha})\Omega\Delta t
+			\end{align*}
+			
+			Then the rate of change of $\vb{B}$ has the magnitude
+			\begin{align*}
+				\dv{B}{t}&=\lim_{\Delta t\to 0}{\dfrac{\Delta B}{\Delta t}} \\
+					&=\lim_{\Delta t\to 0}{\dfrac{\qty(B\sin{\alpha})\Omega\Delta t}{\Delta t}} \\
+				\implies\dv{B}{t}&=\Omega B\sin{\alpha}
+			\end{align*}
+			
+			From the figure, we find that $\Delta\vb{B}$ is perpendicular to both $\vb{B}$ and $\vu{n}$. Hence $\dv{\vb{B}}{t}$ is also perpendicular to both $\vb{B}$ and $\vu{n}$. We also find that $\Omega B\sin{\alpha}=|\vb{\Omega}\cross\vb{B}|$. Therefore,
+			\begin{align}
+				\dv{\vb{B}}{t}&=\vb{\Omega}\cross\vb{B} \label{eqn:dB-dt}
+			\end{align}
+			Equation (\ref{eqn:dB-dt}) is true for any vector $\vb{B}$ that undergoes pure rotation around an axis $\vu{n}$ at a rate $\Omega$.
