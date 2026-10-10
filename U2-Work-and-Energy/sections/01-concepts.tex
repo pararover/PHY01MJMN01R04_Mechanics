@@ -17,6 +17,22 @@
 	\end{itemize}
 
 	\subsection{Work}
+		Let us consider a particle of mass $m$ which is moving on an arbitrary path between points $A$ and $B$. Suppose when the particle is at point $P$ with a position vector $\vb{r}$, it is under the influence of some force $\vb{F}$ which causes it to get displaced to another point $Q$ with a position vector $\vb{r}+\dd{\vb{r}}$.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{figures/fig_work-concept.png}
+		\end{figure}
+		
+		The infinitessimal amount of work done by the force $\vb{F}$ in moving the particle from $P$ to $Q$ is
+		\begin{align*}
+			\dd{W}=\vb{F}\cdot\dd{\vb{r}}=F\cos{\theta}\dd{r}=F_\parallel\dd{r}
+		\end{align*}
+		where $\theta$ is the angle between $\vb{F}$ and $\dd{\vb{r}}$ and $F_\parallel=F\cos{\theta}$ is the projection of $\vb{F}$ along $\dd{\vb{r}}$.
+		
+		Hence, the total work done by the force $\vb{F}$ in moving the particle from $A$ to $B$ is
+		\begin{align*}
+			W&=\int\limits_{A}^{B}{\dd{W}}=\int\limits_{A}^{B}{\vb{F}\cdot\dd{\vb{r}}}=\int\limits_{A}^{B}{F\cos{\theta}\dd{r}}
+		\end{align*}
 	
 	\subsection{Energy}
 	
