@@ -25,14 +25,79 @@
 		
 		The infinitessimal amount of work done by the force $\vb{F}$ in moving the particle from $P$ to $Q$ is
 		\begin{align*}
-			\dd{W}=\vb{F}\cdot\dd{\vb{r}}=F\cos{\theta}\dd{r}=F_\parallel\dd{r}
+			\dd{W}=\vb{F}\cdot\dd{\vb{r}}%=F\cos{\theta}\dd{r}=F_\parallel\dd{r}
 		\end{align*}
-		where $\theta$ is the angle between $\vb{F}$ and $\dd{\vb{r}}$ and $F_\parallel=F\cos{\theta}$ is the projection of $\vb{F}$ along $\dd{\vb{r}}$.
 		
 		Hence, the total work done by the force $\vb{F}$ in moving the particle from $A$ to $B$ is
 		\begin{align*}
-			W&=\int\limits_{A}^{B}{\dd{W}}=\int\limits_{A}^{B}{\vb{F}\cdot\dd{\vb{r}}}=\int\limits_{A}^{B}{F\cos{\theta}\dd{r}}
+			W&=\int\limits_{A}^{B}{\dd{W}}=\int\limits_{A}^{B}{\vb{F}\cdot\dd{\vb{r}}}%=\int\limits_{A}^{B}{F\cos{\theta}\dd{r}}
 		\end{align*}
+		
+		\newpage
+		\subsubsection*{Using projection of force vector}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.6\textwidth]{figures/fig_work-geom.png}
+			\end{figure}
+			
+			If the angle $\theta$ between $\vb{F}$ and $\dd{\vb{r}}$ is known, then we have
+			\begin{align*}
+				\dd{W}=F\cos{\theta}\dd{r}=F_\parallel\dd{r}
+			\end{align*}
+			where $F_\parallel=F\cos{\theta}$ is the projection of $\vb{F}$ along $\dd{\vb{r}}$. Then we can obtain the total work as
+			\begin{align*}
+				W&=\int\limits_{A}^{B}{F\cos{\theta}\dd{r}}=\int\limits_{A}^{B}{F_\parallel\dd{r}}
+			\end{align*}
+			
+		\subsubsection*{Using components of force vector}
+			We can write the force vector in component form as follows:
+			\begin{align*}
+				\vb{F}=\vu{x}F_x + \vu{y}F_y + \vu{z}F_z
+			\end{align*}
+			Also, the infinitessimal displacement is
+			\begin{align*}
+				\vb{\dd{r}}=\vu{x}\dd{x} + \vu{y}\dd{y} + \vu{z}\dd{z}
+			\end{align*}
+			Then the infinitessimal displacement becomes
+			\begin{align*}
+				\dd{W}&=\vb{F}\cdot\dd{\vb{r}} \\
+					&=\qty(\vu{x}F_x + \vu{y}F_y + \vu{z}F_z)\cdot\qty(\vu{x}\dd{x} + \vu{y}\dd{y} + \vu{z}\dd{z}) \\
+				\implies\dd{W}&=F_x\dd{x} + F_y\dd{y} + F_z\dd{z}
+			\end{align*}
+			Therefore, the total work is obtained as
+			\begin{align*}
+				W&=\int\limits_{A}^{B}{\qty(F_x\dd{x} + F_y\dd{y} + F_z\dd{z})} \\
+				\implies W&=\int\limits_{A}^{B}{F_x\dd{x}} + \int\limits_{A}^{B}{F_y\dd{y}} + \int\limits_{A}^{B}{F_z\dd{z}}
+			\end{align*}
+			
+		\subsubsection*{Examples}
+			\begin{enumerate}
+				\item Compute the work done in moving a particle from position $(0,1,2)$ to $(5,6,8)$ by the force $\vb{F}=\vu{x}\qty(2xy+z^2) + \vu{y}x^2 + \vu{z}2xz$.
+				\begin{solution}
+					The given force is $\vb{F}=\vu{x}\qty(2xy+z^2) + \vu{y}x^2 + \vu{z}2xz$, from which we can identify that
+					$$F_x=2xy+z^2,\;F_y=x^2,\;F_z=2xz$$
+					Also, identifying the coordinates $(0,1,2)$ and $(5,6,8)$ to be those of the initial and final points $A$ and $B$ respectively, we have
+%					\begin{align*}
+%						&x_A=0,\quad y_A=1,\quad z_A=2 \\
+%						&x_B=5,\quad y_B=6,\quad z_B=8
+%					\end{align*}
+					%Therefore, 
+					the total work done to be
+					\begin{align*}
+						W&=\int\limits_{A}^{B}{F_x\dd{x}} + \int\limits_{A}^{B}{F_y\dd{y}} + \int\limits_{A}^{B}{F_z\dd{z}} \\
+							&=\int\limits_{A}^{B}{\qty(2xy+z^2)\dd{x}} + \int\limits_{A}^{B}{x^2\dd{y}} + \int\limits_{A}^{B}{2xz\dd{z}} \\
+							&=\int\limits_{A}^{B}{\qty(2xy\dd{x}+x^2\dd{y})} + \int\limits_{A}^{B}{\qty(z^2\dd{x}+2xz\dd{z})} \\
+							&=\int\limits_{A}^{B}{\dd{\qty(x^2y)}} + \int\limits_{A}^{B}{\dd{\qty(xz^2)}} \\
+							&=\left. x^2y \right|_{A}^{B} + \left. xz^2 \right|_{A}^{B} \\
+							&=\qty[x^2y + xz^2]_{A}^{B} \\
+							&=x\qty[xy + z^2]_{x=0,y=1,z=2}^{x=5,y=6,z=8} \\
+							&=\cdot5\cdot\qty(5\cdot6+8^2)-\cdot0\qty(0\cdot1+2^2) \\
+							&=5\cdot\qty(30+64) - 0\\
+							&=5\times94 \\
+						\therefore\; W&=470\,\text{units}
+					\end{align*}
+				\end{solution}
+			\end{enumerate}
 	
 	\subsection{Energy}
 	

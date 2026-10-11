@@ -1,2 +1,27 @@
 \newcommand{\lagrangian}{\mathscr{L}}
 \newcommand{\hamiltonian}{\mathscr{H}}
+
+\usepackage{xcolor}
+
+%\newenvironment{solution}
+%{\vspace{-1.5em}\begin{center}
+%		\begin{tabular}{|p{0.92\textwidth}|}
+%			\hline\\
+%			\textbf{Solution:}
+%		}
+%		{ 
+%			\\\hline
+%		\end{tabular} 
+%	\end{center}
+%}
+\newsavebox{\solutionbox}
+\newenvironment{solution}
+{\par\vspace{-1.5em}\noindent\begin{center}%
+		\begin{lrbox}{\solutionbox}%
+			\begin{minipage}{0.92\textwidth}%
+				\textbf{Solution:}\par\medskip\ignorespaces}
+			{\unskip
+			\end{minipage}%
+		\end{lrbox}%
+		\fbox{\usebox{\solutionbox}}%
+\end{center}}
