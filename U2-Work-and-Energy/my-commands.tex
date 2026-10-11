@@ -16,7 +16,7 @@
 %}
 \newsavebox{\solutionbox}
 \newenvironment{solution}
-{\par\vspace{-1.5em}\noindent\begin{center}%
+{\par\vspace{-1.0em}\noindent\begin{center}%
 		\begin{lrbox}{\solutionbox}%
 			\begin{minipage}{0.92\textwidth}%
 				\textbf{Solution:}\par\medskip\ignorespaces}
@@ -25,3 +25,13 @@
 		\end{lrbox}%
 		\fbox{\usebox{\solutionbox}}%
 \end{center}}
+
+\newcommand{\setwrappadding}{
+	\setlength{\intextsep}{0pt}
+	\setlength{\columnsep}{10pt}
+}
+
+\newcommand{\resetwrappadding}{
+	\setlength{\intextsep}{12pt} 
+	\setlength{\columnsep}{10pt}
+}

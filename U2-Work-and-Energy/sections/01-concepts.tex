@@ -34,7 +34,7 @@
 		\end{align*}
 		
 		\newpage
-		\subsubsection*{Using projection of force vector}
+		\subsubsection{Using projection of force vector}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.6\textwidth]{figures/fig_work-geom.png}
@@ -49,7 +49,7 @@
 				W&=\int\limits_{A}^{B}{F\cos{\theta}\dd{r}}=\int\limits_{A}^{B}{F_\parallel\dd{r}}
 			\end{align*}
 			
-		\subsubsection*{Using components of force vector}
+		\subsubsection{Using components of force vector}
 			We can write the force vector in component form as follows:
 			\begin{align*}
 				\vb{F}=\vu{x}F_x + \vu{y}F_y + \vu{z}F_z
@@ -70,35 +70,128 @@
 				\implies W&=\int\limits_{A}^{B}{F_x\dd{x}} + \int\limits_{A}^{B}{F_y\dd{y}} + \int\limits_{A}^{B}{F_z\dd{z}}
 			\end{align*}
 			
-		\subsubsection*{Examples}
-			\begin{enumerate}
-				\item Compute the work done in moving a particle from position $(0,1,2)$ to $(5,6,8)$ by the force $\vb{F}=\vu{x}\qty(2xy+z^2) + \vu{y}x^2 + \vu{z}2xz$.
-				\begin{solution}
-					The given force is $\vb{F}=\vu{x}\qty(2xy+z^2) + \vu{y}x^2 + \vu{z}2xz$, from which we can identify that
-					$$F_x=2xy+z^2,\;F_y=x^2,\;F_z=2xz$$
-					Also, identifying the coordinates $(0,1,2)$ and $(5,6,8)$ to be those of the initial and final points $A$ and $B$ respectively, we have
-%					\begin{align*}
-%						&x_A=0,\quad y_A=1,\quad z_A=2 \\
-%						&x_B=5,\quad y_B=6,\quad z_B=8
-%					\end{align*}
-					%Therefore, 
-					the total work done to be
+		\subsubsection{Units of work}
+			\begin{itemize}
+				\item In the SI system, the unit of work is the \textbf{joule} (or $\unit{\joule}$), which is defined as the amount of work done by a force of 1 newton acting through a distance of 1 metre, i.e. $$1\,\unit{\joule}=1\,\unit{\newton}\times 1\,\unit{\metre}$$
+				
+				\item  In the CGS system, the unit of work is the \textbf{erg}, which is defined as the amount of work done by a force of 1 dyne acting through a distance of 1 cm. In other words, $$1\text{ erg}=1\text{ dyne}\times 1\,\unit{\centi\metre}$$
+				\begin{itemize}
+					\item The conversion to SI units are as follows:
 					\begin{align*}
-						W&=\int\limits_{A}^{B}{F_x\dd{x}} + \int\limits_{A}^{B}{F_y\dd{y}} + \int\limits_{A}^{B}{F_z\dd{z}} \\
-							&=\int\limits_{A}^{B}{\qty(2xy+z^2)\dd{x}} + \int\limits_{A}^{B}{x^2\dd{y}} + \int\limits_{A}^{B}{2xz\dd{z}} \\
-							&=\int\limits_{A}^{B}{\qty(2xy\dd{x}+x^2\dd{y})} + \int\limits_{A}^{B}{\qty(z^2\dd{x}+2xz\dd{z})} \\
-							&=\int\limits_{A}^{B}{\dd{\qty(x^2y)}} + \int\limits_{A}^{B}{\dd{\qty(xz^2)}} \\
-							&=\left. x^2y \right|_{A}^{B} + \left. xz^2 \right|_{A}^{B} \\
-							&=\qty[x^2y + xz^2]_{A}^{B} \\
-							&=x\qty[xy + z^2]_{x=0,y=1,z=2}^{x=5,y=6,z=8} \\
-							&=\cdot5\cdot\qty(5\cdot6+8^2)-\cdot0\qty(0\cdot1+2^2) \\
-							&=5\cdot\qty(30+64) - 0\\
-							&=5\times94 \\
-						\therefore\; W&=470\,\text{units}
+						1\text{ erg}=\num{e-7}\,\unit{\joule}\qq{and}1\,\unit{\joule}=\num{e7}\text{ erg}
 					\end{align*}
-				\end{solution}
-			\end{enumerate}
+				\end{itemize}
+				
+				\item In the FPS system, the unit of work is the \textbf{foot-poundal} (or ft-lbf), which is defined as the amount of work done by a force of 1 poundal acting through a distance of 1 foot or $$1\text{ ft-lbf}=1\text{ lbf}\times 1\text{ ft}$$
+				\begin{itemize}
+					\item The conversion to SI units are as follows:
+					\begin{align*}
+						1\text{ ft-lbf}\approx 1.356\,\unit{\joule}\qq{and}1\,\unit{\joule}\approx 0.736\text{ ft-lbf}
+					\end{align*}
+				\end{itemize}
+			\end{itemize}
 	
 	\subsection{Energy}
+		In classical mechanics, energy is defined as the scalar capacity of a physical system to perform work. Rather than representing a tangible physical substance, energy is a fundamental, conserved state property that quantifies the state of a system relative to external interactions.
+		
+		The units of energy are exactly the same as that of work.
+		
+		\subsubsection{Kinetic energy}
+			Kinetic energy is the scalar energy possessed by an object due to its state of motion. For a particle of constant mass $m$ moving at instantaneous velocity $\vb{v}$ relative to a reference frame, its kinetic energy is expressed as:
+			\begin{align*}
+				T=\dfrac{1}{2}mv^2
+			\end{align*}
+			where $v=|\vb{v}|=\sqrt{\vb{v}\cdot\vb{v}}$ is the instantaneous speed of the particle. Therefore, the kinetic energy of a particle is independent of the direction of motion of the particle.
+			
+		\subsubsection{Potential energy}
+			Potential energy is stored energy which can be attibuted to the relative spatial configuration or position of a particle within a type of force field, known as a \emph{conservative force}. In such a case, the conservative force may be expressed as the negative gradient of the potential energy:
+			\begin{align*}
+				\vb{F}=-\grad{U}
+			\end{align*}
+			
+			Common forms of potential energy include:
+			\begin{itemize}
+				\item Gravitational potential energy: $U_g = mgh$ (near Earth's surface)
+				
+				\item Elastic potential energy: $U_e = \dfrac{1}{2}kx^2$ (for an ideal spring satisfying Hooke's Law)
+			\end{itemize}
 	
 	\subsection{Power}
+		Power is defined as the rate of doing work. When a force $\vb{F}$ displaces a particle by $\dd{\vb{r}}$ over a time interval $\dd{t}$, the infinitessimal work done is $\dd{W}=\vb{F}\cdot\dd{\vb{r}}$. Then the instantaneous power delivered by the force is
+		\begin{align*}
+			P=\dv{W}{t}=\dfrac{\vb{F}\cdot\dd{\vb{r}}}{\dd{t}}&=\vb{F}\cdot\dv{\vb{r}}{t} \\
+			\implies P&=\vb{F}\cdot\vb{v}
+		\end{align*}
+		If some power $P$ is delivered on a particle, the total work done on it is also obtained as
+		\begin{align*}
+			W&=\int\limits_{t_A}^{t_B}{P\dd{t}}
+		\end{align*}
+		where $t_A$, $t_B$ are the instants of time when the particle was at positions $A$ and $B$ respectively.
+		
+		\subsubsection{Units of power}
+			\begin{itemize}
+				\item In the SI system, the unit of power is the \textbf{watt} (or W), which is defined as the rate at which $1\,\unit{\joule}$ of work is done in $1\,\unit{\second}$, i.e.
+				$$1\unit{\watt}=1\,\unit{\joule}/1\,\unit{\second}$$
+				
+				\item In the CGS system, the unit of power is \textbf{erg per second} (or erg/s), which is defined as the rate at which $1\text{ erg}$ of work is done in $1\,\unit{\second}$.
+				\begin{itemize}
+					\item The conversion to SI units are as follows:
+					\begin{align*}
+						1\text{ erg/s}=\num{e-7}\,\unit{\watt}\qq{and}1\,\unit{\watt}=\num{e7}\text{ erg/s}
+					\end{align*}
+				\end{itemize}
+				
+				\item In the FPS system, the absolute unit of power is \textbf{foot-poundal per second} (or ft-lbf/s), which is defined as the rate at which $1\text{ ft-lbf}$ of work is done in $1\,\unit{\second}$.
+				\begin{itemize}
+					\item The conversion to SI units are as follows:
+					\begin{align*}
+						1\text{ ft-lbf/s}\approx 1.356\,\unit{\watt}\qq{and}1\,\unit{\watt}\approx 0.736\text{ ft-lbf/s}
+					\end{align*}
+				\end{itemize}
+				
+				\item In practical engineering applications, a commonly used unit of power from the FPS system is the \textbf{horsepower} (or hp), defined as
+				$$1\text{ hp}=550\text{ ft-lbf/s}$$
+				\begin{itemize}
+					\item The conversion to SI units are as follows:
+					\begin{align*}
+						1\text{ hp}\approx 0.746\,\unit{\kilo\watt}\qq{and}1\,\unit{\kilo\watt}\approx 1.341\text{ hp}
+					\end{align*}
+				\end{itemize}
+			\end{itemize}
+			
+	\newpage
+	\subsection*{Exercises}
+		\begin{enumerate}
+			\item Compute the work done in moving a particle from position $(0,1,2)$ to $(5,6,8)$ by the force $\vb{F}=\vu{x}\qty(2xy+z^2) + \vu{y}x^2 + \vu{z}2xz$.
+			\begin{solution}
+				The given force is $\vb{F}=\vu{x}\qty(2xy+z^2) + \vu{y}x^2 + \vu{z}2xz$, from which we can identify that
+				$$F_x=2xy+z^2,\;F_y=x^2,\;F_z=2xz$$
+				Also, identifying the coordinates $(0,1,2)$ and $(5,6,8)$ to be those of the initial and final points $A$ and $B$ respectively, we have
+				%					\begin{align*}
+					%						&x_A=0,\quad y_A=1,\quad z_A=2 \\
+					%						&x_B=5,\quad y_B=6,\quad z_B=8
+					%					\end{align*}
+				%Therefore, 
+				the total work done to be
+				\begin{align*}
+					W&=\int\limits_{A}^{B}{F_x\dd{x}} + \int\limits_{A}^{B}{F_y\dd{y}} + \int\limits_{A}^{B}{F_z\dd{z}} \\
+					&=\int\limits_{A}^{B}{\qty(2xy+z^2)\dd{x}} + \int\limits_{A}^{B}{x^2\dd{y}} + \int\limits_{A}^{B}{2xz\dd{z}} \\
+					&=\int\limits_{A}^{B}{\qty(2xy\dd{x}+x^2\dd{y})} + \int\limits_{A}^{B}{\qty(z^2\dd{x}+2xz\dd{z})} \\
+					&=\int\limits_{A}^{B}{\dd{\qty(x^2y)}} + \int\limits_{A}^{B}{\dd{\qty(xz^2)}} \\
+					&=\left. x^2y \right|_{A}^{B} + \left. xz^2 \right|_{A}^{B} =\qty[x^2y + xz^2]_{A}^{B} \\
+					&=x\qty[xy + z^2]_{x=0,y=1,z=2}^{x=5,y=6,z=8} \\
+					&=\cdot5\cdot\qty(5\cdot6+8^2)-\cdot0\qty(0\cdot1+2^2) \\
+					&=5\cdot\qty(30+64) - 0\\
+					&=5\times94 \\
+					\therefore\; W&=470\,\text{units}
+				\end{align*}
+			\end{solution}
+			
+			\item A particle is moved from $(-1,0,2)$ to $(3,-8,4)$ by a force $\vb{F}=\vu{x}\qty(y^2-x^2) + \vu{y}2xy$. What is the total work done on the particle?
+			
+			\item A particle lying in the $xy$-plane is acted upon by a force directed towards the origin whose magnitude is $kr$ where $r=\sqrt{x^2+y^2}$ is the distance from the particle to the origin.
+			\begin{enumerate}
+				\item Find the work that must be done to move the particle from the origin to the point $(1,1)$ along the radius vector to that point.
+				\item Find the work that must be done if the particle is first moved to $(1,0)$ and from there to $(1,1)$.
+			\end{enumerate}
+		\end{enumerate}
