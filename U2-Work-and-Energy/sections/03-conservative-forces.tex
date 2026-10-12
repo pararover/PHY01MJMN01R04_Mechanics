@@ -63,8 +63,99 @@
 		
 		Equation (\ref{eqn:U-cons-F-02}) shows that the potential energy of a particle at an arbitrary position equals the negative of the work done in moving that particle from a far-off distance to that position.
 
+	\setcounter{equation}{0}
 	\subsection{Conservative force as a negative gradient of potential energy}
+		When a particle is acted upon by a net conservative force, the potential energy at an arbitrary point is a function of the position alone. So, for instance, in Cartesian coordinates we have $U(\vb{r})=U(x,y,z)$. Hence the total differential of the potential energy is
+		\begin{align*}
+			\dd{U}&=\pdv{U}{x}\dd{x} + \pdv{U}{y}\dd{y} + \pdv{U}{z}\dd{z}
+		\end{align*}
+		At far-off points, we have $U(\vb{r}\to\infty)=0$. Hence we can integrate the above from a far-off point to some arbitrary position $\vb{r}$ as follows
+		\begin{align}
+			U(\vb{r})&=\int\limits_{0}^{U(\vb{r})}{\dd{U}} \nonumber\\
+			\implies U(\vb{r})&=\int\limits_{\infty}^{\vb{r}}{\qty[\pdv{U}{x}\dd{x} + \pdv{U}{y}\dd{y} + \pdv{U}{z}\dd{z}]} \label{eqn:U-total-diff}
+		\end{align}
+		We can write the net conservative force in a Cartesian system as
+		\begin{align}
+			\vb{F}_c&=F_x\vu{x}+F_y\vu{y}+F_z\vu{z} \label{eqn:Fc-comp}
+		\end{align}
+		
+		Now, from the definition of the potential energy function, we have
+		\begin{align}
+			U(\vb{r})&=-\int\limits_{\infty}^{\vb{r}}{\vb{F}_c\cdot\dd{\vb{r}}} \nonumber\\
+				&=-\int\limits_{\infty}^{\vb{r}}{\qty(F_x\vu{x}+F_y\vu{y}+F_z\vu{z})\cdot\qty(\vu{x}\dd{x}+\vu{y}\dd{y}+\vu{z}\dd{z})} \nonumber\\
+			\implies U(\vb{r})&=-\int\limits_{\infty}^{\vb{r}}{\qty(F_x\dd{x}+F_y\dd{y}+F_z\dd{z})} \label{eqn:U-integ-F}
+		\end{align}
+		
+		Comparing equations (\ref{eqn:U-total-diff}) and (\ref{eqn:U-integ-F}), we get
+		\begin{align*}
+			F_x=-\pdv{U}{x},\quad F_y=-\pdv{U}{y},\quad F_z=-\pdv{U}{z}
+		\end{align*}
+		
+		Hence from equation (\ref{eqn:Fc-comp}), we obtain
+		\begin{align}
+			\vb{F}_c&=-\pdv{U}{x}\vu{x}-\pdv{U}{y}\vu{y}-\pdv{U}{z}\vu{z} \nonumber\\
+			\implies\vb{F}_c&=-\qty[\vu{x}\pdv{x}+\vu{y}\pdv{y}+\vu{z}\pdv{z}]U \label{eqn:F-del-U-01}
+		\end{align}
+		
+		The \emph{nabla operator} $\grad$ is a vector differential operator which is defined as
+		\begin{align*}
+			\grad&=\vu{x}\pdv{x}+\vu{y}\pdv{y}+\vu{z}\pdv{z}
+		\end{align*}
+		When $\grad$ acts on some scalar field $f(\vb{r})$, we obtain the \emph{gradient} of the field $\grad{f}$.
+		
+		Hence, equation (\ref{eqn:F-del-U-01}) can be written as
+		\begin{align*}
+			\Aboxed{\vb{F}_c(\vb{r})&=-\grad{U(\vb{r})}}
+		\end{align*}
+		
+		Therefore, a conservative force can be expressed as the negative gradient of the potential energy.
 	
+	\setcounter{equation}{0}
 	\subsection{Law of conservation of mechanical energy}
+		Consider an arbitrary particle which is moving from an initial point $A$ to a final point $B$ (with position vectors $\vb{r}_A$ and $\vb{r}_B$ respectively) under the influence of conservative forces only. Suppose the net conservative force is $\vb{F}_c$.
+		
+		We know that the potential energy at an arbitrary point $\vb{r}$ is given as
+		\begin{align*}
+			U(\vb{r})=-\int\limits_{\infty}^{\vb{r}}{\vb{F}_c\cdot\dd{\vb{r}}}
+		\end{align*}
+		Then the potential energies at the positions of $A$ and $B$ are
+		\begin{align*}
+			U_A=-\int\limits_{\infty}^{\vb{r}_A}{\vb{F}_c\cdot\dd{\vb{r}}} \qq{and} U_B=-\int\limits_{\infty}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}
+		\end{align*}
+		Hence the change in the potential energy during the entire motion of the particle is
+		\begin{align}
+			\Delta U&=U_B - U_A \nonumber\\
+				&=\qty[-\int\limits_{\infty}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}] - \qty[-\int\limits_{\infty}^{\vb{r}_A}{\vb{F}_c\cdot\dd{\vb{r}}}] \nonumber\\
+				&=\qty[-\int\limits_{\infty}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}] - \qty[\int\limits_{\vb{r}_A}^{\infty}{\vb{F}_c\cdot\dd{\vb{r}}}] \nonumber\\
+				&=-\int\limits_{\infty}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}} - \int\limits_{\vb{r}_A}^{\infty}{\vb{F}_c\cdot\dd{\vb{r}}} \nonumber\\
+				&=-\qty[\int\limits_{\vb{r}_A}^{\infty}{\vb{F}_c\cdot\dd{\vb{r}}} + \int\limits_{\infty}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}] \nonumber\\
+			\implies\Delta U&=-\int\limits_{\vb{r}_A}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}} \label{eqn:Delta-U-cons-eng}
+		\end{align}
+		
+		The total work done by the conservative forces in moving the particle from $A$ to $B$ is
+		\begin{align}
+			W&=\int\limits_{\vb{r}_A}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}} \label{eqn:W-tot-cons-eng}\\
+			\qq{also,}W&=-\Delta U\qq{[using eqn. (\ref{eqn:Delta-U-cons-eng})]} \nonumber
+		\end{align}
+		
+		From the work-energy theorem, we know that the total work done equals the change in kinetic energy of the particle, i.e.
+		\begin{align}
+			W&=\Delta T=T_B - T_A \label{eqn:Delta-T-cons-eng}
+		\end{align}
+		where $T_A$ and $T_B$ are the kinetic energies of the particle at points $A$ and $B$ respectively.
+		
+		Hence, from equations (\ref{eqn:Delta-U-cons-eng}), (\ref{eqn:W-tot-cons-eng}) and (\ref{eqn:Delta-T-cons-eng}), we obtain
+		\begin{align*}
+			\Delta U&=-\Delta T \\
+			\implies\Delta T+\Delta U&=0 \\
+			\implies\qty(T_B-T_A)+\qty(U_B-U_A)&=0 \\
+			\implies T_A+U_A&=T_B+U_B \\
+			\implies E_A&=E_B \\
+			\implies\Aboxed{E&=\text{constant}}
+		\end{align*}
+		
+		Therefore, the mechanical energy (which is the sum of the kinetic and potential energies) remains constant when a particle moves under the influence of conservative forces alone.
+		
+		This is known as the \emph{law of conservation of mechanical energy}.
 	
 	\subsection{Work done by non-conservative forces}
