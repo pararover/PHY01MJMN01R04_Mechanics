@@ -1,4 +1,67 @@
 \section{Conservative and non-conservative forces}
+	Based on the nature of the work done, we can classify different forces into two types:
+	\begin{enumerate}
+		\item \emph{Conservative force:} A force is said to be conservative if the work done by it in displacing a particle between two arbitrary points depends only on the end points, and is independent of the actual path taken by the particle.
+		\begin{itemize}
+			\item The net work done in a closed loop is always zero.
+			\item The mechanical energy (kinetic energy + potential energy) of the system is always conserved.
+			\item Examples of conservative forces:
+			\begin{enumerate}
+				\item Gravitational force -- moving an object up and down takes or returns the exact same amount of energy, regardless of whether it is lifted straight up or taken by a winding ramp.
+				\item Elastic force -- the force exerted by a stretched or compressed ideal spring depends solely on its displacement from the equilibrium position.
+				\item Electrostatic force -- the force between two static electric charges depends only on their positions and magnitudes, not how they arrived there.
+			\end{enumerate}
+		\end{itemize}
+		
+		\item \emph{Non-conservative force:} A force is said to be non-conservative if the work done by it in displacing a particle between two arbitrary points depends on the end points, as well as on the actual path taken by the particle.
+		\begin{itemize}
+			\item The net work done in a closed loop is non-zero.
+			\item The mechanical energy (kinetic energy + potential energy) of the system is not conserved, but dissipated into other forms such as sound and heat.
+			\item Most non-conservative forces are \emph{velocity-dependent}.
+			\item Examples of non-conservative forces:
+			\begin{enumerate}
+				\item Frictional force -- the longer the path taken while pushing an object across a rough floor, the more energy is lost as heat.
+				\item Air resistance or drag force -- the force opposing an object moving through the air, which increases with speed and surface area, while converting kinetic energy into thermal energy.
+				\item Viscous force or fluid resistance -- the resistive force experienced by objects moving through liquids (such as honey or syrup).
+				\item Tension and compression forces -- forces in ropes or cables that can dissipate energy through internal friction and material stretching.
+				\item Propulsion forces -- forces exerted by engines, motors or muscles that actively consume chemical or electrical energy to produce motion.
+			\end{enumerate}
+		\end{itemize}
+	\end{enumerate}
+	
+	\newpage
+	\setcounter{equation}{0}
+	\subsection{Potential energy}
+		\setwrappadding
+		\begin{wrapfigure}[8]{r}{0.36\textwidth}
+			\centering
+			\includegraphics[width=0.34\textwidth]{figures/fig_potential-energy-01.png}
+		\end{wrapfigure}
+		Let us consider a particle being acted upon by a net conservative force $\vb{F}_c$ only. Then the total work done by $\vb{F}_c$ in moving an arbitrary particle from an initial point $A$ (at position $\vb{r}_A$) to a final point $B$ (at position $\vb{r}_B$) is
+		\resetwrappadding
+		\begin{align*}
+			\int\limits_{\vb{r}_A}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}=\qty(\text{function of }\vb{r}_B) - \qty(\text{function of }\vb{r}_A)
+		\end{align*}
+		We refer to this function of position as the potential energy function $U$ and write the above equation as follows
+		\begin{align*}
+			\int\limits_{\vb{r}_A}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}=\qty[-U(\vb{r}_B)]-\qty[-U(\vb{r}_A)]
+		\end{align*}
+		where the negative sign on $U$ is to ensure the conservation of mechanical energy, which is observed experimentally.
+		
+		Hence the above equation can be written as
+		\begin{align}
+			\int\limits_{\vb{r}_A}^{\vb{r}_B}{\vb{F}_c\cdot\dd{\vb{r}}}=U(\vb{r}_A)-U(\vb{r}_B) \label{eqn:U-cons-F-01}
+		\end{align}
+		
+		We assume that this potential energy function vanishes at far-off distances from the source of the conservative force, i.e. $U\to 0$ as $\vb{r}\to\infty$.
+		
+		Choosing $\vb{r}_A\to\infty$ and $\vb{r}_B=\vb{r}$, we obtain from equation (\ref{eqn:U-cons-F-01})
+		\begin{align}
+			\int\limits_{\infty}^{\vb{r}}{\vb{F}_c\cdot\dd{\vb{r}}}&=\underbrace{U(\infty)}_{=0}-U(\vb{r}) \nonumber \\
+			\implies \Aboxed{U(\vb{r})&=-\int\limits_{\infty}^{\vb{r}}{\vb{F}_c\cdot\dd{\vb{r}}}} \label{eqn:U-cons-F-02}
+		\end{align}
+		
+		Equation (\ref{eqn:U-cons-F-02}) shows that the potential energy of a particle at an arbitrary position equals the negative of the work done in moving that particle from a far-off distance to that position.
 
 	\subsection{Conservative force as a negative gradient of potential energy}
 	
