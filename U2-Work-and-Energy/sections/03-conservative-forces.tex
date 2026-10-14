@@ -158,4 +158,58 @@
 		
 		This is known as the \emph{law of conservation of mechanical energy}.
 	
+	\setcounter{equation}{0}
 	\subsection{Work done by non-conservative forces}
+		Consider a particle, moving along an arbitrary path from point $A$ to point $B$, as shown below.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{figures/fig_work-non-cons.png}
+		\end{figure}
+		
+		Suppose the resultant of all conservative forces is $\vb{F}_c$ and the resultant of all non-conservative forces is $\vb{F}_{nc}$. Then the net force acting on the particle at any point on its path is
+		\begin{align}
+			\vb{F}_\text{net}&=\vb{F}_c+\vb{F}_{nc} \label{eqn:F-net-Fc-Fnc}
+		\end{align}
+		
+		Then the total work done by all the forces in moving the particle along the path is
+		\begin{align}
+			W_\text{total}&=\int\limits_{A}^{B}{\vb{F}_\text{net}\cdot\dd{\vb{r}}} \nonumber\\
+				&=\int\limits_{A}^{B}{\qty(\vb{F}_c+\vb{F}_{nc})\cdot\dd{\vb{r}}}\qq{[using eqn. (\ref{eqn:F-net-Fc-Fnc})]} \nonumber\\
+				&=\int\limits_{A}^{B}{\vb{F}_c\cdot\dd{\vb{r}}} + \int\limits_{A}^{B}{\vb{F}_{nc}\cdot\dd{\vb{r}}} \nonumber\\
+			\implies W_\text{total}&=W_c+W_{nc} \label{eqn:W-tot-Wc-Wnc}
+		\end{align}
+		
+		In equation (\ref{eqn:W-tot-Wc-Wnc}), $W_c$ and $W_{nc}$ are the work done separately on the particle by the conservative and the non-conservative forces respectively.
+		
+		From the work-energy theorem, the change in the kinetic energy of the particle equals the total work done on it, i.e.
+		\begin{align}
+			W_\text{total}&=\Delta T \label{eqn:W-T-theorem}
+		\end{align}
+		
+		Also, the change in the potential energy of the particle equals the negative of the work done on it by the conservative forces, i.e.
+		\begin{align}
+			W_c&=-\Delta U \label{eqn:Delta-U-Wc}
+		\end{align}
+		
+		Hence, from equations (\ref{eqn:W-tot-Wc-Wnc}), (\ref{eqn:W-T-theorem}) and (\ref{eqn:Delta-U-Wc}), we obtain
+		\begin{align}
+			\Delta T&=-\Delta U+W_{nc} \nonumber\\
+			\implies W_{nc}&=\Delta T + \Delta U \nonumber\\
+				&=\Delta\qty(T+U) \nonumber\\
+			\implies\Aboxed{W_{nc}&=\Delta E} \label{eqn:W-nc-Del-E}
+		\end{align}
+		
+		Therefore, the work done on a system by all the non-conservative forces equals the change in the mechanical energy of the system.
+		
+		This is known as the \emph{general law of conservation of energy}.
+		
+		\subsubsection*{Special case}
+			Suppose we have a system in which non-conservative forces are either absent or do no work. In either case, we would have $W_{nc}=0$. In such a system, only the conservative forces do any work.
+			
+			Then from equation (\ref{eqn:W-nc-Del-E}), we obtain
+			\begin{align*}
+				\Delta E&=0 \\
+				\implies E&=\text{constant}
+			\end{align*}
+			
+			Therefore, this special case reduces to the law of conservation of mechanical energy.
