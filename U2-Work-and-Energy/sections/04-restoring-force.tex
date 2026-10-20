@@ -65,17 +65,14 @@
 	\begin{align*}
 		\vb{F}&=-kx\vu{x}
 	\end{align*}
-	The potential energy at any point on the $X$-axis is
-	\begin{align*}
-		U&=\dfrac{1}{2}kx^2
-	\end{align*}
+	The potential energy at any point on the $X$-axis is $U=\dfrac{1}{2}kx^2$.
 	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.6\textwidth]{figures/fig_restoring-potential-02.png}
 	\end{figure}
 	
-	Let the particle be initially at the extreme position \#1, having a displacement $x_0$ from the mean position at the origin. Then the initial potential energy at position \#1 is
+	Let the particle be initially at the extreme position $x_0$ from the mean position at the origin, which corresponds to \#1 on the $U(x)$ plot. Then the initial potential energy at \#1 is
 	\begin{align*}
 		U_1&=\dfrac{1}{2}kx_0^2
 	\end{align*}
@@ -85,7 +82,7 @@
 		T_1&=0
 	\end{align*}
 	
-	Suppose that finally the particle reaches some arbitrary point \#2, having displacement $x$. Then the final potential energy is
+	Suppose that finally the particle reaches some arbitrary position $x$, which corresponds to \#2 on the $U(x)$ plot. Then the final potential energy is
 	\begin{align*}
 		U_2&=\dfrac{1}{2}kx^2
 	\end{align*}
@@ -109,18 +106,38 @@
 		\implies \Aboxed{v&=\pm\sqrt{\dfrac{k}{m}\qty(x_0^2-x^2)}} \label{eqn:vel-restoring}
 	\end{align}
 	
+	From Newton's second law of motion, we obtain the acceleration as
+	\begin{align}
+		F=ma&=-kx \nonumber\\
+			\implies\Aboxed{a&=-\dfrac{k}{m}x} \label{eqn:acc-restoring}
+	\end{align}
+	
 	\begin{itemize}
 		\item When the particle is at the extreme positions at either side, i.e. $x=\pm x_0\implies x^2=x_0^2$, then we obtain from equation (\ref{eqn:vel-restoring}) that
 		\begin{align*}
 			v&=\pm\sqrt{\dfrac{k}{m}\qty(x_0^2-x_0^2)} \\
 			\implies v&=0
 		\end{align*}
-		This means that the particle is at rest when it is at either of the extreme positions.
+		Also, from equation (\ref{eqn:acc-restoring}), we obtain
+		\begin{align*}
+			a=a_\text{max}&=-\dfrac{k}{m}x_0
+		\end{align*}
+		This means that the particle is at rest but under maximum magnitude of acceleration when it is at either of the extreme positions.
 		
 		\item When the particle is at the mean position, i.e. $x=0$, then we obtain from equation (\ref{eqn:vel-restoring}) that
 		\begin{align*}
 			v&=\pm\sqrt{\dfrac{k}{m}\qty(x_0^2-0)} \\
 			\implies v=v_\text{max}&=\pm\sqrt{\dfrac{k}{m}x_0^2}
 		\end{align*}
-		This means that the particle moves with a maximum speed of when it is at the mead positions.
+		And from equation (\ref{eqn:acc-restoring}), we obtain
+		\begin{align*}
+			a&=0
+		\end{align*}
+		This means that the particle moves with a maximum speed but under zero acceleration when it is at the mean positions.
 	\end{itemize}
+	
+	The acceleration and velocities of the particle at the extreme positions, mean position and an arbitrary position are shown in the figure below.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\textwidth]{figures/fig_restoring-potential-03.png}
+	\end{figure}
